@@ -1,9 +1,9 @@
-public class TicTacToeGame implements ActionListener {// implements ActionListener Class to this class
-    JFrame frame = new JFrame();// Frame object
-    JPanel t_panel = new JPanel();// Pannel for text
-    JPanel bt_panel = new JPanel();// Pannel for buttons
-    JLabel textfield = new JLabel();// Label object to display text
-    JButton[] bton = new JButton[9];// creating an array of button's because in tic tac toe game there are 9 position's
+public class TicTacToeGame implements ActionListener {
+    JFrame frame = new JFrame();
+    JPanel t_panel = new JPanel();
+    JPanel bt_panel = new JPanel();
+    JLabel textfield = new JLabel();
+    JButton[] bton = new JButton[9];
     int chance_flag = 0;
     Random random = new Random();
     boolean pl1_chance;
@@ -29,12 +29,12 @@ public class TicTacToeGame implements ActionListener {// implements ActionListen
         t_panel.setLayout(new BorderLayout());
         t_panel.setBounds(0, 0, 800, 100);
 
-        bt_panel.setLayout(new GridLayout(3, 3));// setting layout of bt_pannel as gridlayout 
+        bt_panel.setLayout(new GridLayout(3, 3));
         bt_panel.setBackground(new Color(150, 150, 150));
 
         for (int i = 0; i < 9; i++) {
-            bton[i] = new JButton();// creating object for each button element of array
-            bt_panel.add(bton[i]);// adding each button to the pannel for buttons
+            bton[i] = new JButton();
+            bt_panel.add(bton[i]);
             bton[i].setFont(new Font("Ink Free", Font.BOLD, 120));
             bton[i].setFocusable(false);
             bton[i].addActionListener(this);
@@ -44,7 +44,7 @@ public class TicTacToeGame implements ActionListener {// implements ActionListen
         frame.add(t_panel, BorderLayout.NORTH);
         frame.add(bt_panel);
 
-        startGame();// To start Game
+        startGame();
     }
     public void startGame() {
 
@@ -79,7 +79,7 @@ public class TicTacToeGame implements ActionListener {// implements ActionListen
     
     }
 
-    public void matchCheck() {// In this function we are checking wining condition's using conditional statments
+    public void matchCheck() {
         if ((bton[0].getText() == "X") && (bton[1].getText() == "X") && (bton[2].getText() == "X")) {
             xWins(0, 1, 2);
         }
